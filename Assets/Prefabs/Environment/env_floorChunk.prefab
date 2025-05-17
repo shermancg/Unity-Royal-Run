@@ -117,8 +117,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2355915372884735515}
+  - component: {fileID: -1523957235250889524}
   m_Layer: 0
-  m_Name: Floor Chunk Prefab
+  m_Name: env_floorChunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,6 +141,23 @@ Transform:
   - {fileID: 535100800413793359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1523957235250889524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396745522989209605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3255fbb73cbd8d045903650c9eee8a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fencePrefab: {fileID: 3921588518246678927, guid: 491294a6206aa2a40bed1279b10bdd8e, type: 3}
+  lanePosOffset:
+  - -2.7
+  - 0
+  - 2.7
 --- !u!1 &8935088470357379925
 GameObject:
   m_ObjectHideFlags: 0
