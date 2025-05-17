@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4455005630759013749}
   - component: {fileID: 938837813914508651}
   - component: {fileID: 2846347606728886705}
-  - component: {fileID: 6956627879099977229}
+  - component: {fileID: 6767991259523663362}
   m_Layer: 0
   m_Name: geo_floor
   m_TagString: Untagged
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6956627879099977229
+--- !u!65 &6767991259523663362
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,8 +106,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.1809341, z: 1}
+  m_Center: {x: 0, y: 0.090467036, z: 0}
 --- !u!1 &7396745522989209605
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,18 +186,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 535100800413793359}
     m_Modifications:
-    - target: {fileID: 3999058980050925843, guid: fd377e6b49a4d1040ba1cf2817673455, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9192233
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999058980050925843, guid: fd377e6b49a4d1040ba1cf2817673455, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9192233
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999058980050925843, guid: fd377e6b49a4d1040ba1cf2817673455, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9192233
-      objectReference: {fileID: 0}
     - target: {fileID: 3999058980050925843, guid: fd377e6b49a4d1040ba1cf2817673455, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.75
