@@ -43,10 +43,12 @@ GameObject:
   - component: {fileID: 4662127345204491716}
   - component: {fileID: 4471913250135079957}
   - component: {fileID: 4459451326920021879}
+  - component: {fileID: -943949225318714142}
   - component: {fileID: 1087346032589999063}
+  - component: {fileID: 1345251819593480335}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +128,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  xClamp: 3.5
+  zClamp: 2
+--- !u!114 &-943949225318714142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644126582249806550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8558b425cfdc504f8d4efb781db1d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &1087346032589999063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,6 +169,29 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &1345251819593480335
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644126582249806550}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1.976406
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9561768, z: 0}
 --- !u!1001 &4878223163320377061
 PrefabInstance:
   m_ObjectHideFlags: 0
