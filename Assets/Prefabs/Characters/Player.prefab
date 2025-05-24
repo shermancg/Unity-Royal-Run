@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569c2475824ec4d4d9d974ec5b7af621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 6
   xClamp: 3.5
   zClamp: 2
 --- !u!114 &-943949225318714142
@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 5595560299328258696}
+  gotHitCooldown: 1
+  initialInvulnPeriod: 0.5
 --- !u!54 &1087346032589999063
 Rigidbody:
   m_ObjectHideFlags: 0

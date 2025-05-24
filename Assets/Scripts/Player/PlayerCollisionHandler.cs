@@ -5,12 +5,23 @@ public class PlayerCollisionHandler : MonoBehaviour
 {
     [SerializeField] Animator playerAnimator;
     [SerializeField] float gotHitCooldown = 1f;
-    [SerializeField] float initialInvulnPeriod = 2f;
+    [SerializeField] float initialInvulnPeriod = 0.5f;
+
     const string gotHitString = "gotHit";
     bool canBeHit = false; // Start as false to prevent hits at game start
 
+    LevelGenerator levelGenerator;
+    ObstacleSpawner obstacleSpawner;
+
     void Start()
     {
+        levelGenerator = FindFirstObjectByType<LevelGenerator>();
+        if (levelGenerator == null)
+        {
+            Debug.LogError("LevelGenerator not found in the scene.");
+            return;
+        }
+
         StartCoroutine(InitialInvulnCo());
     }
 
@@ -27,6 +38,10 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             playerAnimator.SetTrigger(gotHitString);
             Debug.Log("Collision detected with: " + collision.gameObject.name);
+
+            levelGenerator.ChangeChunkMoveSpeed(levelGenerator.reduceSpeed); // Decrease the chunk move speed on hit
+            // obstacleSpawner.AdjustSpawnInterval(obstacleSpawner.spawnSlower); // Increase the spawn interval on hit
+
             StartCoroutine(GotHitCooldownCo());
         }
     }

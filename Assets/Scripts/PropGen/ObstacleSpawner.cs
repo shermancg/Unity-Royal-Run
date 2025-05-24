@@ -9,7 +9,10 @@ public class ObstacleSpawner : MonoBehaviour
     // [SerializeField] GameObject obstaclePrefab;
     [SerializeField] List<GameObject> obstaclePrefabs;
     [SerializeField] Transform ObstacleParent; // Parent object for the obstacles
-    [SerializeField] float spawnInterval = 2f;
+    [SerializeField] float spawnIntervalDelay = 1.5f;
+    // [SerializeField] float spawnIntervalMinDelay = 1f; 
+    // public float spawnSlower = 0.1f;
+    // public float spawnFaster = -0.1f;
     [SerializeField] int spawnCap = 10;
     [SerializeField] float spawnWidth = 5f; // Width of the spawn area
 
@@ -20,11 +23,20 @@ public class ObstacleSpawner : MonoBehaviour
         StartCoroutine(SpawnObstacles());
     }
 
+    // public void AdjustSpawnInterval(float intervalAdjustment)
+    // {
+    //     spawnIntervalDelay -= intervalAdjustment;
+    //     if (spawnIntervalDelay < spawnIntervalMinDelay) // Prevent the spawn interval from going too fast
+    //     {
+    //         spawnIntervalDelay = spawnIntervalMinDelay;
+    //     }
+    // }
+
     IEnumerator SpawnObstacles()
     {
         while (obstaclesSpawned < spawnCap)
         {
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(spawnIntervalDelay);
             SpawnObstacle();
         }
     }

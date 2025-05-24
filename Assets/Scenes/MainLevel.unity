@@ -524,7 +524,7 @@ Transform:
   m_GameObject: {fileID: 587337386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.43, z: 33.68}
+  m_LocalPosition: {x: 0, y: 2.87, z: 62.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -549,7 +549,7 @@ MonoBehaviour:
   - {fileID: 3076405350517863376, guid: b3aa2eb7cf4cd674cb43abd0e83814a7, type: 3}
   - {fileID: 3896829622716505076, guid: 33f43085c4d2b4f418e93ec7b239542d, type: 3}
   ObstacleParent: {fileID: 587337387}
-  spawnInterval: 1.5
+  spawnIntervalDelay: 1.5
   spawnCap: 100
   spawnWidth: 3
 --- !u!1 &765180543
@@ -747,7 +747,10 @@ MonoBehaviour:
   chunkParent: {fileID: 765180544}
   startingChunksAmount: 8
   chunkLength: 10
-  moveSpeed: 5
+  moveSpeed: 9
+  minMoveSpeed: 7
+  reduceSpeed: -6
+  increaseSpeed: 2
 --- !u!1001 &6647879262826971902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -759,6 +762,14 @@ PrefabInstance:
     - target: {fileID: 2644126582249806550, guid: 84c755a0b58c8c74f8504f62c698475b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459451326920021879, guid: 84c755a0b58c8c74f8504f62c698475b, type: 3}
+      propertyPath: sideMoveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459451326920021879, guid: 84c755a0b58c8c74f8504f62c698475b, type: 3}
+      propertyPath: forwardMoveSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4662127345204491716, guid: 84c755a0b58c8c74f8504f62c698475b, type: 3}
       propertyPath: m_LocalPosition.x
