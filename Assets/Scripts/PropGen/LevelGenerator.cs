@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    
+    [SerializeField] CameraControls cameraControls; 
     [SerializeField] GameObject chunkPrefab;
     [SerializeField] Transform chunkParent; // Parent object for the chunks
     [SerializeField] int startingChunksAmount = 10; // Number of chunks to instantiate at the start
@@ -28,23 +28,30 @@ public class LevelGenerator : MonoBehaviour
         // Debug.Log("Current move speed: " + moveSpeed); // Log the current move speed
     }
 
-public void ChangeChunkMoveSpeed(float newSpeed)
-{
-    moveSpeed += newSpeed; // Update the move speed
-
-    if (moveSpeed < minMoveSpeed) // Check if the new speed is below the minimum
+    public void ChangeChunkMoveSpeed(float newSpeed)
     {
-        moveSpeed = minMoveSpeed; // Set to minimum speed
+        moveSpeed += newSpeed; // Update the move speed
+
+        if (moveSpeed < minMoveSpeed) // Check if the new speed is below the minimum
+        {
+            moveSpeed = minMoveSpeed; // Set to minimum speed
+        }
+
+        ManageGravity(newSpeed);
+
+        cameraControls.ChangeFOV(newSpeed); // Call the method to change the camera's Field of View
     }
 
-    float newGravityZ = Physics.gravity.z - newSpeed;
-    // Clamp so gravity.z never goes above (less negative than) -9.81
-    if (newGravityZ > gravityLimiter)
+    private void ManageGravity(float newSpeed)
     {
-        newGravityZ = gravityLimiter;
+        float newGravityZ = Physics.gravity.z - newSpeed;
+        // Clamp so gravity.z never goes above (less negative than) -9.81
+        if (newGravityZ > gravityLimiter)
+        {
+            newGravityZ = gravityLimiter;
+        }
+        Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, newGravityZ);
     }
-    Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, newGravityZ);
-}
 
     private void SpawnStartingChunks()
     {

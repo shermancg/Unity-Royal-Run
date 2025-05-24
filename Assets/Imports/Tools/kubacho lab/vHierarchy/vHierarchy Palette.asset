@@ -81,7 +81,7 @@ MonoBehaviour:
     enabled: 1
   - builtinIcons: []
     customIcons:
-    - 
+    - TestFailed
     enabled: 1
   - builtinIcons: []
     customIcons: []
