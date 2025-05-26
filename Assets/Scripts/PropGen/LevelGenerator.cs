@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] CameraControls cameraControls; 
     [SerializeField] GameObject chunkPrefab;
     [SerializeField] Transform chunkParent; // Parent object for the chunks
+    [SerializeField] ScoreManager scoreManager;
 
     [Header("Level Gen Settings")]
     [SerializeField] int startingChunksAmount = 10; // Number of chunks to instantiate at the start
@@ -68,8 +71,11 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstantiateChunk(float spawnPositionZ)
     {
-        GameObject newChunk = Instantiate(chunkPrefab, new Vector3(0, 0, spawnPositionZ), Quaternion.identity, chunkParent);
-        chunks.Add(newChunk); // Add the new chunk to the list
+        GameObject newChunkGO = Instantiate(chunkPrefab, new Vector3(0, 0, spawnPositionZ), Quaternion.identity, chunkParent);
+        chunks.Add(newChunkGO); // Add the new chunk to the list
+
+        ChunkDetails newChunk = newChunkGO.GetComponent<ChunkDetails>();
+        newChunk.Init(this, scoreManager);
     }
 
     void MoveChunks()

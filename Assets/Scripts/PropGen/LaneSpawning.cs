@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ChunkDetails : MonoBehaviour
 {
@@ -14,12 +15,22 @@ public class ChunkDetails : MonoBehaviour
     // The list is 0, 1, 2 because the laneArray array has 3 entries, so it can assign 0 (lane 1), 1 (lane 2), or 2 (lane 3) to the availableLanes list
     List<int> availableLanes = new List<int> { 0, 1, 2 };
 
+    LevelGenerator levelGenerator;
+    ScoreManager scoreManager;
+
     void Start()
     {
         SpawnFences();
         SpawnApple();
         SpawnCoins();
     }
+
+    public void Init(LevelGenerator levelGenerator, ScoreManager scoreManager)
+    {
+        this.levelGenerator = levelGenerator;
+        this.scoreManager = scoreManager;
+    }
+
 
     void SpawnFences()
     {
@@ -64,7 +75,8 @@ public class ChunkDetails : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(laneArray[selectedLane], transform.position.y, transform.position.z);
 
-        Instantiate(applePrefab, spawnPos, Quaternion.identity, this.transform);
+        PickupApple newApple = Instantiate(applePrefab, spawnPos, Quaternion.identity, this.transform).GetComponent<PickupApple>();
+        newApple.Init(levelGenerator);
     }
 
     void SpawnCoins()
@@ -82,7 +94,8 @@ public class ChunkDetails : MonoBehaviour
         {
             float coinZPosOffset = firstCoinZPosOffset - (i * 2); // Each coin is 2 units behind the previous
             Vector3 spawnPos = new Vector3(laneArray[selectedLane], transform.position.y, (transform.position.z - firstCoinZPosOffset / 2 + coinZPosOffset));
-            Instantiate(coinPrefab, spawnPos, Quaternion.identity, this.transform);
+            PickupCoin newCoin = Instantiate(coinPrefab, spawnPos, Quaternion.identity, this.transform).GetComponent<PickupCoin>();
+            newCoin.Init(scoreManager);
         }
     }
 
