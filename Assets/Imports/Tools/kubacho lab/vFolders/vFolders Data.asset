@@ -18,26 +18,41 @@ MonoBehaviour:
     - 709f11a7f3c4041caa4ef136ea32d874
     - bbf2f8185c64ed341a8fc092e14136b3
     - 9899b93d8f1e6e840872b7de5cb05091
+    - 48e666cb16c487548bb0ddb3522f4adb
+    - 119805e7d0dfc1c49b07bf9cc456fa4c
+    - ae74ebbe2ce647b44bbc961c6a6cecbf
     - 111038feb66f9834d9ae28fa94facb2a
     values:
     - iconNameOrGuid: Prefab Icon
       colorIndex: 7
       isIconRecursive: 1
-      isColorRecursive: 0
+      isColorRecursive: 1
     - iconNameOrGuid: 
       colorIndex: 1
       isIconRecursive: 0
       isColorRecursive: 0
     - iconNameOrGuid: RawImage Icon
-      colorIndex: 5
+      colorIndex: 9
       isIconRecursive: 0
-      isColorRecursive: 0
+      isColorRecursive: 1
     - iconNameOrGuid: CollabPull
       colorIndex: 2
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: 
+      colorIndex: 4
       isIconRecursive: 0
       isColorRecursive: 0
     - iconNameOrGuid: 
       colorIndex: 4
       isIconRecursive: 0
       isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 4
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 4
+      isIconRecursive: 0
+      isColorRecursive: 1
   bookmarks: []

@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class CameraControls : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] ParticleSystem fxZoomEffect;
 
+    [Header("Camera Settings")]
     [SerializeField] float minFOV = 30f;
     [SerializeField] float maxFOV = 60f; 
     [SerializeField] float zoomDuration = 0.5f; // Duration of the FOV change
@@ -19,7 +22,13 @@ public class CameraControls : MonoBehaviour
     public void ChangeFOV(float newSpeed)
     {
         StopAllCoroutines(); // Stop any ongoing FOV change coroutine, prevents overlapping FOV changes
-        StartCoroutine(ChangeFOVco(newSpeed)); 
+        StartCoroutine(ChangeFOVco(newSpeed));
+
+        if (newSpeed > 0)
+        {
+            fxZoomEffect.Play();
+        }
+
     }
 
     IEnumerator ChangeFOVco(float newSpeed)

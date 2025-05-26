@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] CameraControls cameraControls; 
     [SerializeField] GameObject chunkPrefab;
     [SerializeField] Transform chunkParent; // Parent object for the chunks
+
+    [Header("Level Gen Settings")]
     [SerializeField] int startingChunksAmount = 10; // Number of chunks to instantiate at the start
+    [Tooltip("Don't change this unless you also change the chunk prefab's length.")]
     [SerializeField] float chunkLength = 10f; // Length of each chunk
     [SerializeField] float moveSpeed = 7f; // Speed at which the chunks move
     [SerializeField] float minMoveSpeed = 5f;

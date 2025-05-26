@@ -37,7 +37,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (canBeHit)
         {
             playerAnimator.SetTrigger(gotHitString);
-            Debug.Log("Collision detected with: " + collision.gameObject.name);
+            // Debug.Log("Collision detected with: " + collision.gameObject.name);
 
             levelGenerator.ChangeChunkMoveSpeed(levelGenerator.reduceSpeed); // Decrease the chunk move speed on hit
             // obstacleSpawner.AdjustSpawnInterval(obstacleSpawner.spawnSlower); // Increase the spawn interval on hit
