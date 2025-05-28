@@ -801,6 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1980187668}
+  gameManager: {fileID: 1120978220}
 --- !u!114 &1120978220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +817,7 @@ MonoBehaviour:
   playerController: {fileID: 885283206}
   timeText: {fileID: 1630240833}
   gameOverTextGO: {fileID: 1203546677}
-  startTime: 3
+  startTime: 30
 --- !u!1 &1203546677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,11 +1445,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraControls: {fileID: 1326730029}
-  chunkPrefab: {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
+  chunkPrefabs:
+  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
+  - {fileID: 4828056253557544585, guid: d4f7352e4f890e74caca3f665b404901, type: 3}
+  - {fileID: 4828056253557544585, guid: bfbb8cb2853a06a4b80ffbffc344b949, type: 3}
+  - {fileID: 4828056253557544585, guid: 54540580ab7ceb6409122e7f71c08f0d, type: 3}
+  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
+  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
+  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
+  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
+  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
+  checkPointChunkPrefab: {fileID: 4828056253557544585, guid: ffc1fb5e5ab6e7e4da77e5eb60c01382, type: 3}
   chunkParent: {fileID: 765180544}
   scoreManager: {fileID: 1120978219}
   startingChunksAmount: 8
   chunkLength: 10
+  checkPointChunkInterval: 8
   moveSpeed: 9
   minMoveSpeed: 7
   reduceSpeed: -6
