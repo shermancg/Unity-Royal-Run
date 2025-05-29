@@ -9,11 +9,20 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Settings")]
     [SerializeField] float startTime = 10f;
+    [SerializeField] float checkpointTimeIncrease = 10f; // Time increase when reaching a checkpoint
 
     bool gameOver = false;
     float timeLeft;
 
-    // public bool GameOver { get { return gameOver; } } //This is a property to check if the game is over
+    // PROPERTIES
+    public float CheckpointTimeIncrease => checkpointTimeIncrease;
+    public float Timeleft // This is a property to access the time left in the game with other scripts.
+    {
+        get => timeLeft;
+        set => timeLeft = value;
+    }
+
+    // METHODS
     public bool GameOver => gameOver; // Using expression-bodied property for simplicity. Same as above.
 
     void Start()
