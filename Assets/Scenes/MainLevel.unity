@@ -817,7 +817,8 @@ MonoBehaviour:
   playerController: {fileID: 885283206}
   timeText: {fileID: 1630240833}
   gameOverTextGO: {fileID: 1203546677}
-  startTime: 30
+  startTime: 20
+  checkpointTimeIncrease: 4
 --- !u!1 &1203546677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,8 +1451,6 @@ MonoBehaviour:
   - {fileID: 4828056253557544585, guid: d4f7352e4f890e74caca3f665b404901, type: 3}
   - {fileID: 4828056253557544585, guid: bfbb8cb2853a06a4b80ffbffc344b949, type: 3}
   - {fileID: 4828056253557544585, guid: 54540580ab7ceb6409122e7f71c08f0d, type: 3}
-  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
-  - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
   - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
   - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
   - {fileID: 7396745522989209605, guid: 4870b3081e1cdc74b8f5c66e2be6b3a2, type: 3}
