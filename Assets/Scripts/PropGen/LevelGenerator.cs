@@ -61,13 +61,20 @@ public class LevelGenerator : MonoBehaviour
 
     private void ManageGravity(float newSpeed)
     {
+        float newGravityY = Physics.gravity.y - newSpeed;
         float newGravityZ = Physics.gravity.z - newSpeed;
-        // Clamp so gravity.z never goes above (less negative than) -9.81
+
+        // Clamp so gravity.y and gravity.z never go above (less negative than) -9.81
+        if (newGravityY > gravityLimiter)
+        {
+            newGravityY = gravityLimiter;
+        }
         if (newGravityZ > gravityLimiter)
         {
             newGravityZ = gravityLimiter;
         }
-        Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, newGravityZ);
+
+        Physics.gravity = new Vector3(Physics.gravity.x, newGravityY, newGravityZ);
     }
 
     void MoveChunks()
