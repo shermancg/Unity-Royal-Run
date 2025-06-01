@@ -88,9 +88,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_pedestal
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4922692210310510764, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
+    - {fileID: 4480959417834209394, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6084853062876247193, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
       insertIndex: -1
