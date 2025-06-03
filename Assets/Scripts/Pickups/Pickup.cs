@@ -5,20 +5,16 @@ public abstract class Pickup : MonoBehaviour
     [SerializeField] float rotationSpeed = 100f;
     const string playerTag = "Player";
 
-    void Update()
-    {
-        transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
-    }
-
-    protected abstract void OnPickup(); 
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
         {
             OnPickup();
-            Destroy(this.gameObject);
+            // Destroy(this.gameObject); // I had to disable this because it was destroying pickups before they coudd play sounds
         }
     }
+
+    protected abstract void OnPickup(); 
 
 }

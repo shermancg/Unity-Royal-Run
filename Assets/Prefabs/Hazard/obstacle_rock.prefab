@@ -70,27 +70,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
       propertyPath: m_Size.x
-      value: 1.9537506
+      value: 1.5356932
       objectReference: {fileID: 0}
     - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
       propertyPath: m_Size.y
-      value: 1.2601492
+      value: 1.0838
       objectReference: {fileID: 0}
     - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
       propertyPath: m_Size.z
-      value: 2.0138564
+      value: 1.3149196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
       propertyPath: m_Center.x
-      value: 0.03386402
+      value: -0.03159046
       objectReference: {fileID: 0}
     - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
       propertyPath: m_Center.y
-      value: 0.13007301
+      value: 0.04189843
       objectReference: {fileID: 0}
     - target: {fileID: 6997609977501072061, guid: 5c7fa310474ec3643b7636e271d1a252, type: 3}
       propertyPath: m_Center.z
-      value: 0.04392942
+      value: 0.11997789
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -148,10 +152,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.58
-  m_Height: 2.375833
+  m_Radius: 0.6657733
+  m_Height: 2.022908
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.03617684}
+  m_Center: {x: 0.07103789, y: 0.112354994, z: 0.021046042}
 --- !u!136 &2032975375172949014
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -171,10 +175,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.68154
-  m_Height: 2.0014658
+  m_Radius: 0.67136025
+  m_Height: 2.1910572
   m_Direction: 0
-  m_Center: {x: -0.056359928, y: 0.19844466, z: 0.03617684}
+  m_Center: {x: 0.038435698, y: 0.10238969, z: 0.12205207}
 --- !u!114 &5749277066496335124
 MonoBehaviour:
   m_ObjectHideFlags: 0
