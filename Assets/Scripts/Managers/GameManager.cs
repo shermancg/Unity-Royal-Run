@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerController playerController;
     [SerializeField] TMPro.TMP_Text timeText;
     [SerializeField] GameObject gameOverTextGO;
+    [SerializeField] GameObject restartTextGO;
 
     [Header("Game Settings")]
     [SerializeField] float startTime = 10f;
@@ -32,7 +33,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (gameOver) return; 
+        if (gameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Time.timeScale = 1f;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            }
+            return;
+        }
         DecreaseTime();
     }
 
@@ -52,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         gameOverTextGO.SetActive(true);
+        restartTextGO.SetActive(true);
         timeLeft = 0f;
         Time.timeScale = 0.1f;
         playerController.enabled = false;

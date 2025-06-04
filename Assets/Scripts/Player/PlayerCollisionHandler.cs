@@ -1,17 +1,30 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Cinemachine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] Animator playerAnimator;
+    [SerializeField] AudioSource hitAudioSource;
+  
+    [Header("Settings")]
     [SerializeField] float gotHitCooldown = 1f;
     [SerializeField] float initialInvulnPeriod = 0.5f;
 
+    [SerializeField] float shakeIntensityModifier = 10f; // Global modifier for shake intensity if needed
+    
     const string gotHitString = "gotHit";
     bool canBeHit = false; // Start as false to prevent hits at game start
 
     LevelGenerator levelGenerator;
     ObstacleSpawner obstacleSpawner;
+
+    CinemachineImpulseSource cinemachineImpulseSource;
+    private void Awake()
+    {
+        cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
+    }
 
     void Start()
     {
@@ -40,10 +53,18 @@ public class PlayerCollisionHandler : MonoBehaviour
             // Debug.Log("Collision detected with: " + collision.gameObject.name);
 
             levelGenerator.ChangeChunkMoveSpeed(levelGenerator.reduceSpeed); // Decrease the chunk move speed on hit
-            // obstacleSpawner.AdjustSpawnInterval(obstacleSpawner.spawnSlower); // Increase the spawn interval on hit
+            
+            hitAudioSource.Play();
+
+            CameraShake();
 
             StartCoroutine(GotHitCooldownCo());
         }
+    }
+
+private void CameraShake()
+    {
+        cinemachineImpulseSource.GenerateImpulse(shakeIntensityModifier);
     }
 
     IEnumerator GotHitCooldownCo()
